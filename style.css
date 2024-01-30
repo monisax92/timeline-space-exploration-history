@@ -1,0 +1,136 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	background: url('https://img.freepik.com/free-vector/color-seamless-space-pattern_102902-2360.jpg?w=740&t=st=1675331570~exp=1675332170~hmac=5f6251763e22aaf5e0c839f6119d7b05d5a72f72dfb8817059b7f258ab7c5067');
+	background-position: center center;
+}
+
+.timeline {
+	color: midnightblue;
+	position: relative;
+	width: 100%;
+	max-width: 800px;
+	margin: 2rem auto;
+
+	ul {
+		display: flex;
+		flex-direction: column;
+		margin: 0 2rem;
+		list-style: none;
+
+		li {
+			position: relative;
+			margin-bottom: 3rem;
+			padding: 2rem;
+			width: 50%;
+			background-color: rgba(220, 220, 220, 0.8);
+			border: #e028ff solid 1px;
+			border-radius: 10px;
+			font-size: 1rem;
+			line-height: 1.5rem;
+			transition: all 0.2s;
+
+			&:hover {
+				background-color: #df28ffe3;
+				color: rgba(220, 220, 220, 1);
+			}
+
+			&::after {
+				content: '';
+				background-color: #e028ff;
+				height: 20px;
+				width: 20px;
+				border-radius: 50%;
+				position: absolute;
+				top: calc(50% - 10px);
+			}
+
+			&:nth-child(even) {
+				align-self: flex-end;
+				transform: translateX(20px);
+
+				&::after {
+					left: -30px;
+				}
+			}
+
+			&:nth-child(odd) {
+				transform: translateX(-20px);
+
+				&::after {
+					right: -30px;
+				}
+			}
+
+			h2 {
+				text-align: center;
+				margin-bottom: 1rem;
+			}
+
+			div {
+				margin-top: 1rem;
+				font-size: smaller;
+				text-align: right;
+				font-style: italic;
+			}
+		}
+	}
+
+	&::before {
+		content: '';
+		height: 100%;
+		width: 2px;
+		background-color: #eb74ff;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		// display:block;
+		// top: 0;
+	}
+}
+
+@media (max-width: 620px) {
+	.timeline {
+		ul {
+			li {
+				padding: 1rem;
+				font-size: 0.9rem;
+				h2 {
+					font-size: 1rem;
+					margin-bottom: 0.5rem;
+				}
+				div {
+					text-align: center;
+					margin-top: 0.5rem;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 400px) {
+	.timeline {
+		ul {
+			li {
+				padding: 0.5rem;
+				font-size: 0.8rem;
+				h2 {
+					font-size: 1rem;
+					margin-bottom: 0.25rem;
+				}
+				div {
+					text-align: center;
+					margin-top: 0.5rem;
+				}
+			}
+		}
+	}
+}
+
+/* #eb74ff
+#e028ff */
